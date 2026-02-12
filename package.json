@@ -1,0 +1,29 @@
+{
+  "name": "example-async-rpc-ts",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "gateway": "bun run gateway.ts",
+    "a": "bun run serviceA.ts",
+    "b": "bun run serviceB.ts",
+    "c": "bun run serviceC.ts",
+    "d": "bun run serviceD.ts",
+    "e": "bun run serviceE.ts",
+    "f": "bun run serviceF.ts",
+    "g": "bun run serviceG.ts",
+    "h": "bun run serviceH.ts",
+    "i": "bun run serviceI.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@resonatehq/sdk": "^0.9.6",
+    "@types/express": "^5.0.3",
+    "express": "^5.1.0"
+  }
+}

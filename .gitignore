@@ -1,0 +1,5 @@
+node_modules/
+bun.lock
+*.js
+*.d.ts
+!bun.lockb
