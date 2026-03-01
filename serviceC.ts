@@ -5,9 +5,10 @@ const resonate = new Resonate({
   group: "service-c",
 });
 
-async function baz(_ctx: Context): Promise<number> {
+function* baz(ctx: Context): Generator<any, number, any> {
   console.log("running function baz");
-  return 1;
+  const result = yield* ctx.rpc("zim", ctx.options({ target: "poll://any@service-g" })); 
+  return Number(result);
 }
 
 resonate.register("baz", baz);

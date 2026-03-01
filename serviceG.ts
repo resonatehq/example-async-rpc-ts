@@ -11,6 +11,7 @@ function* zim(ctx: Context, arg: number): Generator<any, number, any> {
     "rax",
     ctx.options({ target: "poll://any@service-h" }),
   );
+  yield* ctx.sleep(5000);
   const promiseI = yield* ctx.beginRpc<number>(
     "dop",
     ctx.options({ target: "poll://any@service-i" }),

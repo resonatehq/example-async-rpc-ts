@@ -7,10 +7,15 @@ const resonate = new Resonate({
 
 function* foo(ctx: Context): Generator<any, number, any> {
   console.log("running function foo");
-  const result = yield* ctx.rpc<number>(
+  let result = yield* ctx.rpc<number>(
     "bar",
     ctx.options({ target: "poll://any@service-b" }),
   );
+  const anotherResult = yield* ctx.rpc<number>(
+    "zim",
+    ctx.options({ target: "poll://any@service-g" }),
+  );
+  result = result + anotherResult;
   return result + 1;
 }
 

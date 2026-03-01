@@ -1,5 +1,6 @@
 import express from "express";
 import { Resonate } from "@resonatehq/sdk";
+import { v4 as uuidv4 } from "uuid";
 
 const app = express();
 app.use(express.json());
@@ -12,7 +13,9 @@ const resonate = new Resonate({
 app.post("/await-chain", async (_req, res) => {
   try {
     console.log("running await_chain_route_handler");
-    const promiseId = "await-chain";
+    // Generate a UUID for promiseId using a standard library
+
+    const promiseId = uuidv4();
     const result = await resonate.rpc(
       promiseId,
       "foo",
