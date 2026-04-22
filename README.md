@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.png" alt="Async RPC — Resonate example" />
+</p>
+
 # Async RPC | Resonate example application (TypeScript)
 
 This example application showcases Resonate's Async RPC capabilities with three different request flows.
